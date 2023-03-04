@@ -1,7 +1,7 @@
 pipeline{
     agent any
     triggers{
-        pollSCM('* * * * *')
+        upStream(upStreamProjects: 'SMP_pipelinejob', threshold: husdon.model.Result.SUCCESS)
     }
         stages{
             stage('git clone'){
