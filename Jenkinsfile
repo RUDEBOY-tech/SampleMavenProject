@@ -1,12 +1,12 @@
 pipeline{
     agent any
     triggers{
-        upstream(upstreamProjects: 'SMP_pipelinejob', threshold: hudson.model.Result.SUCCESS)
+        gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
     }
         stages{
             stage('git clone'){
                 steps{
-                    git credentialsId: '05a31444-11ef-438b-a24c-759401eaa665', url: 'https://github.com/RUDEBOY-tech/SampleMavenProject.git'
+                    git branch: "${params.BRANCH}", url: 'https://github.com/RUDEBOY-tech/SampleMavenProject.git'
 
                 }
             }
