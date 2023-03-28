@@ -43,7 +43,7 @@ pipeline {
                          "files": [
                              {
                                  "pattern": "target/*.jar",
-                                 "target": "my-second-repo/"
+                                 "target": "mysecondrepo/"
 
                              }
                                   ]
