@@ -25,7 +25,7 @@ pipeline {
        stage('rt server'){
            steps{
                rtServer (
-                   id: 'JFROG-OSS',
+                   id: 'jfrog-OSS',
                    url: 'http://18.218.93.211:8082/artifactory',
                    username: 'admin',
                    password: 'Jfrog@123',
@@ -38,7 +38,7 @@ pipeline {
        stage('rt upload'){
            steps{
                rtUpload (
-                   serverId: 'Jfrog-OSS',
+                   serverId: 'jfrog-OSS',
                    spec: '''{
                          "files": [
                              {
